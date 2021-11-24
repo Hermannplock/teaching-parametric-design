@@ -3,28 +3,32 @@ const sketchWidth = 400;
 
 
 function setup() {
-  createCanvas(sketchWidth, sketchHeight);
-  background(200);
+  createCanvas(sketchWidth, sketchHeight, SVG);
   angleMode(DEGREES);
 }
 
-function draw() {
-  background(200, 300,150);
-  stroke(0);
-  strokeWeight (5);
-  noFill();
 
-  beginShape();
 
- 
-  let spacing = map(mouseX, 0, width, 5, 100)
-  for (let a = 0; a < 360; a += spacing ) {
-    let x = 100 * sin(a) + 200;
-    let y = 100 * cos(a) + 200;
-    vertex (x, y)
+function draw(){
+ noLoop();
+ background("white");
+ fill ("white");
+ stroke ("red");
 
+ for (let i= 120; i <= 340; i += 5 ){
+   let rectSize = 10 + i * 0.18
+   rect (i ,10 ,rectSize);
+   rotate(20);
   }
- endShape(CLOSE);
+  for (let i= 120; i <= 340; i += 5 ){
+    let rectSize = 10 + i * 0.18
+    rect (i ,10 ,rectSize);
+    rotate(20);
+
+  save('rectangles')
+
+  } 
+ 
 }
 
 
